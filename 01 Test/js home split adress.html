@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Выравнивание кода ALT+SHIFT+F -->
+    <script>
+        let str = 'http://www.ufa.com.ua/utilites/hdd/out.php?sort=2'
+
+        let protocol = str.substr(0, str.indexOf('//') - 1)
+        str = str.replace(protocol, '')
+        str = str.replace('://', '')
+
+        let host = str.substr(0, str.indexOf('/'))
+        str = str.replace(host, '')
+
+        let path = ''
+
+        while (true) {
+            if (str.indexOf('/', 1) == -1) {
+                break;
+            }
+
+            let lenght = str.indexOf('/', 1)
+            let substring = str.substr(0, lenght + 1)
+
+            path += substring
+            str = str.replace(substring, '')
+        }
+
+
+        let file = ''
+        if (str.indexOf('?') == -1) {
+            file = str;
+            str = ''
+        } else {
+            file = str.substring(0, str.indexOf('?', 0))
+            str = str.replace(file, '')
+        }
+
+        str = str.replace('?', '')
+        let request = ''
+        if (str.length > 0) {
+            request = str
+        }
+
+        
+
+
+        // let string = 'abcde'
+
+        // class Pasport {
+        //     id = '234234';
+        //     name = 'Nikita';
+        //     surname = 'Buschan';
+
+
+        // }
+
+        console.log()
+    </script>
+</body>
+
+</html>

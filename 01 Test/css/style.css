@@ -1,0 +1,41 @@
+img {
+    width: auto ;
+}
+
+.img-left {
+    background-image: url('/мотивация-спиздил-сам-на-случай-важных-переговоров-3035872.jpeg');
+    width: auto;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container img {
+    width: 300px;
+}
+
+@media(max-width: 700px){
+    .container {
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .container img {
+        width: 200px;
+    }
+}
+
+@media(max-width: 600px){
+    .container {
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .container img {
+        width: 100px;
+    }
+}
+

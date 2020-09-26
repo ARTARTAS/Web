@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let draw = {
+            black: 'rgb(129, 23, 23)',
+            white: 'rgb(255, 187, 0)',
+
+            Square(color) {
+                var square = document.createElement('div');
+                square.style.background = color;
+                square.style.width = '20px';
+                square.style.height = '20px';
+                square.style.display = 'inline-block';
+                square.style.margin = '0';
+                return square;
+            }
+        }
+
+        let body = document.body;
+        let div = document.createElement('div');
+
+        div.style.display = 'grid';
+        div.style.gridTemplate = 'repeat(8, 1fr) / repeat(8, 1fr)';
+        div.style.width = '160px';
+        //  div.insertBefore(document.createElement('span'), div.lastChild);
+
+        for (let i = 1; i < 9; i++) {
+            for (var j = 1; j < 9; j++) {
+                if (i%2 == j%2) {
+                    body.insertBefore(div, body.lastChild);
+                    div.insertBefore(draw.Square(draw.black), div.lastChild);
+                } else {
+                    body.insertBefore(div, body.lastChild);
+                    div.insertBefore(draw.Square(draw.white), div.lastChild)
+                }
+            
+            }
+        }  
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1-text" onclick="ChangeText()">Hi</h1>
+
+    <script>
+        function ChangeText() {
+            let h1 = document.getElementById('h1-text');
+
+            if (h1.textContent == 'buy') {
+                h1.textContent = 'hi';
+            } else {
+                h1.textContent = 'buy';
+            }
+        }
+    </script>
+</body>
+</html>

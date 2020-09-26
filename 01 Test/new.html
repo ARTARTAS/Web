@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        [id^="raz"] {
+          padding: 3em 30%;
+          background: green;
+        }
+        [id^="raz"] div {
+          min-height: 4em;
+          background: blue;
+        }
+        </style>
+        
+        <div id="raz1">
+          <div></div>
+        </div>
+        
+        <script>
+          var raz1 = document.getElementById('raz1');
+          raz1.onmouseover = function() {
+            this.style.background = 'red';
+          }
+          raz1.onmouseout = function(e) {
+            this.style.background = 'green';
+            this.children[0].style.background = (e.relatedTarget == this.children[0] ? 'yellow' : '');
+          }
+        </script>
+</body>
+
+</html>
